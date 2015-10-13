@@ -1,52 +1,54 @@
 
-
-
 body {
-    font-size: 16px;
-    max-width: 100%;
-    height: 100vh;
     margin: auto;
     background: lavender;
+    height: 100vh;
 }
 
-header {
+/* ---- index header ---- */
+
+
+.index_header {
+    width: 100%;
+    height: 20vh;
     background-color: #4c1569;
     padding-left: .5em;
-    height: 20vh;
-    -webkit-box-shadow:0 0 25px white inset;
+    -webkit-box-shadow: 0 0 25px white inset;
     -moz-box-shadow: 0 0 25px #4c1569 inset;
-    box-shadow:0 0 25px #ffffb0 inset;
+    box-shadow: 0 0 25px #ffffb0 inset;
+
 }
 
-h1 {
+
+.index_header h1 {
     font-family: 'Brush Script MT', cursive;
     color: white;
     font-size: 6em;
-    display: inline-block;
-    bottom: 35%;
-    position: relative;
-    left: 5%;
-    margin: 0;
     text-shadow: 2px 2px 4px black, 0 0 50px #f7d795, 0 0 20px #ecac40;
+    position: relative;
+    display: inline-block;
+    left: 5%;
+    bottom: 35%;
 
 }
 
-img[src="assets/images/lakers.logo.jpg"] {
+.index_header img[src="assets/images/lakers.logo.jpg"] {
     width: 13%;
     padding: 1.2em;
     height: 15vh;
 
 }
+
+
 .header_panel {
     display: inline-block;
-    position: relative;
     width: 13%;
-    left: 10%;
-    bottom: 20%;
-    height: 15vh;
     font-family: 'Press Start 2P', cursive;
     font-size: 1em;
     text-align: center;
+    position: relative;
+    left: 10%;
+    bottom: 30%;
 
 }
 
@@ -55,17 +57,18 @@ img[src="assets/images/lakers.logo.jpg"] {
     color: white;
     text-shadow: 2px 2px 4px black, 0 0 50px #f7d795, 0 0 20px #ffffb0;
     font-size: 1.2em;
+
 }
 
 a.panel_link:hover, a.panel_link:active {
     color: #ffffb0;
 }
+
 a.panel_link {
     text-decoration: none;
     color: white;
 }
-
-
+/* ---- stats containers ----*/
 
 .stats_container {
     width: 15%;
@@ -73,26 +76,27 @@ a.panel_link {
     box-shadow: 10px 20px 65px #9473FE;
     border: 1px solid #9473FE;
     border-radius: .75em;
-    font-size:.90em;
+    font-size: .90em;
     font-family: 'Press Start 2P', cursive;
     color: #4417D4;
     text-shadow: 4px 4px 6px white, 0 0 10px #9473FE, 0 0 10px #9473FE;
     text-align: center;
+    display: inline-block;
     position: relative;
-    top: 15%;
-    left: 1%;
-
+    top: 15%
 
 }
+
 button {
     width: 60%;
-    background-color:#4c1569;
+    background-color: #4c1569;
     color: white;
     font-family: 'Press Start 2P', cursive;
     border: white 1px solid;
     border-radius: 50%;
 
 }
+
 .games-played {
     width: 65%;
     height: 15vh;
@@ -102,11 +106,13 @@ button {
 .attempts {
     height: 15vh;
 }
+
 .accuracy {
     width: 65%;
     height: 15vh;
     display: inline-block;
 }
+/* ---- game board ---- */
 
 .game-board {
     width: 72%;
@@ -119,11 +125,10 @@ button {
     box-shadow: 0 0 25px #9473FE inset;
     padding: 1.2em 0 0 5em;
     margin: .5em;
+    display: inline-block;
     position: relative;
-    left: 17%;
-    bottom: 50%;
-
-
+    top: 20%;
+    left: 5%;
 
 }
 
@@ -131,9 +136,7 @@ button {
     width: 98%;
     height: 98%;
 
-
 }
-
 
 .card {
     width: 14%;
@@ -141,31 +144,41 @@ button {
     display: inline-block;
     position: relative;
     margin: .30em;
-    -webkit-box-shadow: 0 0 10px white ;
+    -webkit-box-shadow: 0 0 10px white;
     -moz-box-shadow: 0 0 15px #9473FE;
     box-shadow: 0 0 15px #9473FE;
     transition: 2s;
 
-
-
 }
+
 .front {
     width: 100%;
     height: 100%;
     position: absolute;
     backface-visibility: hidden;
 
-
 }
+
 .back {
-    width:   100%;
+    width: 100%;
     height: 100%;
     position: relative;
 
-
 }
-img  {
+
+img {
     width: 100%;
     height: 100%;
 
+}
+
+/* ---- about Section ---- */
+.about_header {
+    font-family: 'Press Start 2P', cursive;
+}
+.about_body {
+    width: 100%;
+}
+.picture img {
+    width: 10%;
 }
