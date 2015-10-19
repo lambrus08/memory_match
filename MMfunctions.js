@@ -1,4 +1,3 @@
-
 /**
  * Created by godson on 10/15/15.
  */
@@ -8,11 +7,12 @@ var secondCardClicked = null;
 var totalPossibleMatches = 9;
 var matchCounter = 0;
 
-var matches = 0;
+
 var attempts = 0;
 var accuracy = 0;
 var gamesPlayed = 0;
-var displayStats = 0;x
+
+
 
 
 function cardClicked(card_id) {
@@ -27,6 +27,7 @@ function cardClicked(card_id) {
     }
     else {
         secondCardClicked = frontSource;
+        attempts++;
         console.log('second card clicked is now ' + secondCardClicked);
         if (secondCardClicked == firstCardClicked) {
             matchCounter++;
@@ -50,7 +51,8 @@ function cardClicked(card_id) {
                 secondCardClicked = null;
                 $(".back").removeClass("current_card");
                 console.log('2nd card click done');
-            },200);
+            }, 200);
         }
     }
 }
+
