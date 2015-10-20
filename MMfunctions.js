@@ -14,6 +14,47 @@ var gamesPlayed = 0;
 
 
 
+function displayStats() {
+    accuracy = Math.round(100*(matchCounter / attempts));
+    console.log(accuracy);
+    $(".games-played .value").text(gamesPlayed);
+    $(".attempts .value").text(attempts);
+    if (attempts == 0 && matchCounter == 0) {
+        $(".accuracy .value").text("100%");
+    }
+    else {
+        $(".accuracy .value").text(accuracy + "%");
+    }
+
+
+}
+
+function resetStats() {
+    accuracy = 0;
+    matchCounter = 0;
+    attempts = 0;
+    gamesPlayed++;
+
+
+}
+
+
+function resetButton() {
+    $(function() {
+        var parent = $("#game-area");
+        var divs = parent.children();
+        while (divs.length) {
+            parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
+        }
+    });
+
+    resetStats();
+    displayStats();
+    $(".back").show();
+    firstCardClicked = null;
+    secondCardClicked = null;
+
+}
 
 function cardClicked(card_id) {
     $(card_id).addClass("current_card");
@@ -28,7 +69,7 @@ function cardClicked(card_id) {
     else {
         secondCardClicked = frontSource;
         attempts++;
-        console.log('second card clicked is now ' + secondCardClicked);
+        console.log('second card clicked is now ' + attempts);
         if (secondCardClicked == firstCardClicked) {
             matchCounter++;
             firstCardClicked = null;
@@ -52,7 +93,12 @@ function cardClicked(card_id) {
                 $(".back").removeClass("current_card");
                 console.log('2nd card click done');
             }, 200);
+
+
         }
+        displayStats();
     }
+
+
 }
 
