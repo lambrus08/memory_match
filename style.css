@@ -1,6 +1,5 @@
 
 body {
-    margin: auto;
     background: lavender;
     height: 100vh;
 }
@@ -10,7 +9,7 @@ body {
 
 .index_header {
     width: 100%;
-    height: 20%;
+    height: 15%;
     background-color: #4c1569;
     padding-left: .5em;
     -webkit-box-shadow: 0 0 25px white inset;
@@ -23,7 +22,7 @@ body {
 .index_header h1 {
     font-family: 'Brush Script MT', cursive;
     color: white;
-    font-size: 6em;
+    font-size: 3em;
     text-shadow: 2px 2px 4px black, 0 0 50px #f7d795, 0 0 20px #ecac40;
     position: relative;
     display: inline-block;
@@ -115,40 +114,45 @@ button {
 }
 /* ---- game board ---- */
 
-.game-board {
-    width: 72%;
-    height: 75%;
-    background-color: #ffffb0;
-    border-radius: .75em;
-    border: 2px solid #9473FE;
-    -webkit-box-shadow: 0 0 10px white inset;
-    -moz-box-shadow: 0 0 15px #4c1569 inset;
-    box-shadow: 0 0 25px #9473FE inset;
-    padding: 1.2em 0 0 5em;
-    margin: .5em;
-    display: inline-block;
-    position: relative;
-    top: 20%;
-    left: 5%;
+/*.game-board {*/
+    /*width: 90%;*/
+    /*height: 60%;*/
+    /*background-color: #ffffb0;*/
+    /*border-radius: .75em;*/
+    /*border: 2px solid #9473FE;*/
+    /*-webkit-box-shadow: 0 0 10px white inset;*/
+    /*-moz-box-shadow: 0 0 15px #4c1569 inset;*/
+    /*box-shadow: 0 0 25px #9473FE inset;*/
+    /*padding: 1.2em 0 0 5em;*/
+    /*margin: .5em;*/
+    /*display: inline-block;*/
+    /*position: relative;*/
+    /*top: 20%;*/
+    /*left: 5%;*/
 
-}
+/*}*/
 
 #game-area {
-    width: 98%;
-    height: 98%;
+    height: 60%;
+    position: relative;
+    top: 25%;
+    background-color: #4c1569;
+
 
 }
 
 .card {
-    width: 14%;
-    height: 30%;
+    width: 10%;
+    height: 45%;
     display: inline-block;
     position: relative;
-    margin: .30em;
     -webkit-box-shadow: 0 0 10px white;
     -moz-box-shadow: 0 0 15px #9473FE;
     box-shadow: 0 0 15px #9473FE;
-    transition: 2s;
+    margin-left: .25em;
+    margin-top: .25em;
+
+
 
 }
 
@@ -156,7 +160,7 @@ button {
     width: 100%;
     height: 100%;
     position: absolute;
-    backface-visibility: hidden;
+    /*backface-visibility: hidden;*/
 
 }
 
