@@ -1,7 +1,7 @@
 
 body {
-    background: lavender;
     height: 100vh;
+    background-color: #4c1569;
 }
 
 /* ---- index header ---- */
@@ -10,11 +10,10 @@ body {
 .index_header {
     width: 100%;
     height: 15%;
-    background-color: #4c1569;
-    padding-left: .5em;
-    -webkit-box-shadow: 0 0 25px white inset;
-    -moz-box-shadow: 0 0 25px #4c1569 inset;
-    box-shadow: 0 0 25px #ffffb0 inset;
+    /*padding-left: .5em;*/
+    /*-webkit-box-shadow: 0 0 25px white inset;*/
+    /*-moz-box-shadow: 0 0 25px #4c1569 inset;*/
+    /*box-shadow: 0 0 25px #ffffb0 inset;*/
 
 }
 
@@ -135,8 +134,9 @@ button {
 #game-area {
     height: 60%;
     position: relative;
-    top: 25%;
-    background-color: #4c1569;
+    top: 23%;
+    padding: 1.0em 0 0 .5em;
+
 
 
 }
@@ -149,10 +149,7 @@ button {
     -webkit-box-shadow: 0 0 10px white;
     -moz-box-shadow: 0 0 15px #9473FE;
     box-shadow: 0 0 15px #9473FE;
-    margin-left: .25em;
-    margin-top: .25em;
-
-
+    margin:.3em;
 
 }
 
@@ -162,12 +159,14 @@ button {
     position: absolute;
     /*backface-visibility: hidden;*/
 
+
 }
 
 .back {
     width: 100%;
     height: 100%;
     position: relative;
+    border: white 2px solid;
 
 }
 
