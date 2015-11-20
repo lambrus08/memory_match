@@ -1,151 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <link href='https://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="MMfunctions.js"></script>
-
-    <title></title>
-</head>
+       <title>Memory Match</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="script.js"></script>
+    </head>
 <body>
-<header class="index_header">
-
-    <img src="assets/images/lakers.logo.png" alt="lakers">
-
-    <h1> Dunking with Legends</h1>
-
-    <div class="header_panel">
-        <h4><a class="panel_link" href="#">Settings</a></h4>
-        <h4><a class="panel_link" href="about.html">About</a></h4>
+<div class="jumbotron">
+        <img src="">
+        <h1>Dunking with legends</h1>
     </div>
-
-</header>
-<!--<div class="stats_container">-->
-    <!--<div class="games-played">-->
-        <!--<div class="label">Games Played</div>-->
-        <!--<div class="value"></div>-->
-    <!--</div>-->
-    <!--<div class="attempts">-->
-        <!--<div class="label">Attempts</div>-->
-        <!--<div class="value"></div>-->
-    <!--</div>-->
-    <!--<div class="accuracy">-->
-        <!--<div class="label">Accuracy</div>-->
-        <!--<div class="value"></div>-->
-    <!--</div>-->
-
-    <!--<button class="reset" onclick="resetButton()">Reset Game</button>-->
-
-<!--</div>-->
-<!--<div class="game-board">-->
-    <div id="game-area">
-
-        <!--Kobe pair-->
-
-        <div class="card">
-            <div class="front"><img src="assets/images/kobe.jpg"></div>
-            <div class="back" onclick="cardClicked(this)"><img src="assets/images/cardlogo.jpg"></div>
+<div class="row">
+        <div class="col-md-3">
+            <div id="game-stats" class="panel panel-default">
+                <div class="panel-heading"><h3>Stats</h3></div>
+                <div class="panel-body">
+                    <p class="games-played"><span class="label label-default">Games played</span> : <span class="value"></span></p>
+                    <p class="attempts"><span class="label label-default">Attempts</span> : <span class="value"></span></p>
+                    <p class="accuracy"><span class="label label-default">Accuracy</span> : <span class="value"></span></p>
+                    <button class="btn reset">Reset Game</button>
+                </div>
+            </div>
         </div>
-
-        <div class="card">
-            <div class="front"><img src="assets/images/kobe.jpg"></div>
-            <div class="back" onclick="cardClicked(this)"><img src="assets/images/cardlogo.jpg"></div>
-        </div>
-
-        <!-- Shaq pair -->
-
-        <div class="card">
-            <div class="front"><img src="assets/images/shaq.jpg"></div>
-            <div class="back" onclick="cardClicked(this)"><img src="assets/images/cardlogo.jpg"></div>
-        </div>
-
-        <div class="card">
-            <div class="front"><img src="assets/images/shaq.jpg"></div>
-            <div class="back" onclick="cardClicked(this)"><img src="assets/images/cardlogo.jpg"></div>
-        </div>
-
-        <!-- Jerry pair -->
-
-        <div class="card">
-            <div class="front"><img src="assets/images/jerrywest.jpg"></div>
-            <div class="back" onclick="cardClicked(this)"><img src="assets/images/cardlogo.jpg"></div>
-        </div>
-        <div class="card">
-            <div class="front"><img src="assets/images/jerrywest.jpg"></div>
-            <div class="back" onclick="cardClicked(this)"><img src="assets/images/cardlogo.jpg"></div>
-        </div>
-
-        <!-- Slava pair -->
-
-        <div class="card">
-            <div class="front"><img src="assets/images/slava.jpg"></div>
-            <div class="back" onclick="cardClicked(this)"><img src="assets/images/cardlogo.jpg"></div>
-        </div>
-
-        <div class="card">
-            <div class="front"><img src="assets/images/slava.jpg"></div>
-            <div class="back" onclick="cardClicked(this)"><img src="assets/images/cardlogo.jpg"></div>
-        </div>
-
-        <!-- Pau pair -->
-
-        <div class="card">
-            <div class="front"><img src="assets/images/pau.jpg"></div>
-            <div class="back" onclick="cardClicked(this)"><img src="assets/images/cardlogo.jpg"></div>
-        </div>
-        <div class="card">
-            <div class="front"><img src="assets/images/pau.jpg"></div>
-            <div class="back" onclick="cardClicked(this)"><img src="assets/images/cardlogo.jpg"></div>
-        </div>
-
-        <!-- Magic pair -->
-
-        <div class="card">
-            <div class="front"><img src="assets/images/magic.jpg"></div>
-            <div class="back" onclick="cardClicked(this)"><img src="assets/images/cardlogo.jpg"></div>
-        </div>
-        <div class="card">
-            <div class="front"><img src="assets/images/magic.jpg"></div>
-            <div class="back" onclick="cardClicked(this)"><img src="assets/images/cardlogo.jpg"></div>
-        </div>
-
-        <!-- Wilt pair -->
-
-        <div class="card">
-            <div class="front"><img src="assets/images/wilt.jpg"></div>
-            <div class="back" onclick="cardClicked(this)"><img src="assets/images/cardlogo.jpg"></div>
-        </div>
-        <div class="card">
-            <div class="front"><img src="assets/images/wilt.jpg"></div>
-            <div class="back" onclick="cardClicked(this)"><img src="assets/images/cardlogo.jpg"></div>
-        </div>
-
-        <!-- James pair -->
-
-        <div class="card">
-            <div class="front"><img src="assets/images/Jamesworthy.jpg"></div>
-            <div class="back" onclick="cardClicked(this)"><img src="assets/images/cardlogo.jpg"></div>
-        </div>
-        <div class="card">
-            <div class="front"><img src="assets/images/Jamesworthy.jpg"></div>
-            <div class="back" onclick="cardClicked(this)"><img src="assets/images/cardlogo.jpg"></div>
-        </div>
-
-        <!-- Kareem -->
-
-        <div class="card">
-            <div class="front"><img src="assets/images/kareem.jpg"></div>
-            <div class="back" onclick="cardClicked(this)"><img src="assets/images/cardlogo.jpg"></div>
-        </div>
-        <div class="card">
-            <div class="front"><img src="assets/images/kareem.jpg"></div>
-            <div class="back" onclick="cardClicked(this)"><img src="assets/images/cardlogo.jpg"></div>
+        <div class="col-md-9">
+            <div id="game-area" class="panel panel-default">
+                <div class="card">
+                    <div class="front">front-1<img src="" /></div>
+                    <div class="back"><img src="" />back-1</div>
+                </div>
+                <div class="card">
+                    <div class="front">front-1<img src="" /></div>
+                    <div class="back"><img src="" />back-1</div>
+                </div>
+                <div class="card">
+                    <div class="front">front-2<img src="" /></div>
+                    <div class="back"><img src="" />back-2</div>
+                </div>
+                <div class="card">
+                    <div class="front">front-2<img src="" /></div>
+                    <div class="back"><img src="" />back-2</div>
+                </div>
+            </div>
         </div>
     </div>
-<!--</div>-->
-
 </body>
+
 </html>
