@@ -1,47 +1,54 @@
 <html>
 
 <head>
-       <title>Memory Match</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-        <link rel="stylesheet" href="style.css">
-        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-        <script src="main.js"></script>
-    </head>
+    <title>Memory Match</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="main.js"></script>
+</head>
 <body>
 <div class="jumbotron">
-        <h1>Dunking with legends</h1>
-    </div>
+    <h1>Dunking with legends</h1>
+</div>
 <div class="row">
-        <div class="col-md-3">
-            <video width="320" height="240" controls>
-                <source src="assets/Kobe%20Bryant%20Dunk%20on%20Dwight%20Howard.mp4" type="video/mp4">
-            </video>
-            <div id="game-stats">
-                <div class="stats"><h3>Are you a legend?</h3></div>
-                <div class="stats-holder">
-                    <div class="games-played">
-                        <h4><span class="label label-default">Games Played</span></h4>
-                        <div class="value"></div>
-                    </div>
-                    <div class="attempts">
-                        <h4><span class="label label-default">Attempts</span></h4>
-                        <div class="value"></div>
-                    </div>
-                    <div class="accuracy"><h4><span class="label label-default">Accuracy</span></h4>
-                        <div class="value"></div></div>
+    <div class="col-md-3">
+        <div id="game-stats">
+            <div class="stats"><h3>Are you a legend?</h3></div>
+            <div class="row">
+                <video class="col-xs-8 col-xs-offset-2">
+                    <source src="assets/kobe%20dunk.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="row stats-holder">
+                <div class="games-played col-xs-3">
+                    <h4><span class="label label-default">Games Played</span></h4>
+
+                    <div class="value"></div>
+                </div>
+                <div class="attempts col-xs-3">
+                    <h4><span class="label label-default">Attempts</span></h4>
+
+                    <div class="value"></div>
+                </div>
+                <div class="accuracy col-xs-3">
+                    <h4><span class="label label-default">Accuracy</span></h4>
+                    <div class="value"></div>
+                </div>
+                <div content="col-xs-3">
                     <button class="btn reset">Reset Game</button>
                 </div>
             </div>
         </div>
-        <div class="col-md-9">
-            <div id="game-area">
-                </video>
+    </div>
+    <div class="col-md-9">
+        <div id="game-area">
 
-
-            </div>
 
         </div>
+
     </div>
+</div>
 </body>
 
 </html>
