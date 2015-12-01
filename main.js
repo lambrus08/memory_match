@@ -14,6 +14,9 @@ var firstCardClicked = null;
 var secondCardClicked = null;
 var matchCounter = 0;
 var totalPossibleMatches = 9;
+var attempts = 0;
+var accuracy = 0;
+var gamesPlayed = 0;
 
 
 function addCardsToDom() {
@@ -45,6 +48,7 @@ function addCardsToDom() {
 }
 
 function cardClicked(backCardClicked) {
+
     console.log('inside card clicked function: ', backCardClicked);
     $(backCardClicked).addClass('currentCard');
     console.log('check for class change: ', backCardClicked);
@@ -57,19 +61,21 @@ function cardClicked(backCardClicked) {
     }
     else {
         secondCardClicked = srcId;
+        attempts++;
+
         console.log('this is 2nd card clicked: ', secondCardClicked);
         if (secondCardClicked == firstCardClicked) {
             matchCounter++;
             firstCardClicked = null;
             secondCardClicked = null;
-            console.log('1st card clicked status in funciton: ', firstCardClicked);
-            console.log('2nd card clicked status in funciton: ', secondCardClicked);
+            console.log('1st card clicked status in function: ', firstCardClicked);
+            console.log('2nd card clicked status in function: ', secondCardClicked);
             $('.back').removeClass('currentCard');
             if (matchCounter === totalPossibleMatches) {
                 alert("will be adding better graphic to excite you betta!");
             }
             else {
-                return console.log('functionality reset');
+                console.log('functionality reset');
             }
         }
         else {
@@ -84,19 +90,57 @@ function cardClicked(backCardClicked) {
             }, 500);
 
         }
+        displayStats();
+
     }
 
 }
+
+
 function addClickHandler(){
     $('.back').on("click", function () {
         console.log("this is clicked: ", $(this));
         var backCardClicked = $(this);
-        cardClicked(backCardClicked)
+        cardClicked(backCardClicked);
     });
+}
+
+
+function displayStats(){
+    accuracy = Math.round(100* (matchCounter / attempts));
+    $('.games-played .value').text(gamesPlayed);
+    $('.attempts .value').text(attempts);
+    if (attempts == 0) {
+        $('.accuracy .value').text("100%");
+    }
+    else {
+        $('.accuracy .value').text(accuracy + '%');
+    }
+
+}
+function resetStats() {
+    accuracy = 0;
+    totalPossibleMatches = 0;
+    attempts = 0;
+    matchCounter = 0;
+    gamesPlayed++;
+}
+function assignResetButton() {
+    $('.btn').on('click', function(){
+        resetStats();
+        displayStats();
+        $('.back').show();
+        firstCardClicked = null;
+        secondCardClicked = null;
+
+
+    });
+
 }
 
 $(document).ready(function () {
     addCardsToDom();//this function must called here in order to load dynamic board and have the click function
     //recognize the back class
     addClickHandler();
+    assignResetButton();
 });
