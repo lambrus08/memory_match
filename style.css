@@ -1,45 +1,152 @@
-.jumbotron {
+body {
+    background-color: #4c1569;
+
+}
+
+.jumbotron_mobile {
     background-color: #4c1569;
     font-family: 'Brush Script MT', cursive;
     color: white;
-    -webkit-box-shadow: 0 0 25px white inset;
-    -moz-box-shadow: 0 0 25px #4c1569 inset;
-    box-shadow: 0 0 25px #ffffb0 inset;
+    margin-bottom: 0px;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 200;
 
 }
 
-.jumbotron h1  {
+#arena {
+    height: 35%;
+}
+
+.arena-holder img {
+    border-radius: 103px 103px 103px 103px;
+    -moz-border-radius: 103px 103px 103px 103px;
+    -webkit-border-radius: 103px 103px 103px 103px;
+    border: 16px double #FDB927;
+}
+
+.video-holder {
+    text-align: center;
+}
+
+#medium_header {
+    color: white;
     text-shadow: 2px 2px 4px black, 0 0 50px #f7d795, 0 0 20px #ecac40;
-
-}
-#game-area{
-    background: lavender;
-    border: #4c1569 1px solid;
-    width: 100%;
-    height: 70vh;
-    padding: 24px;
-    margin: 0 auto;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 4em;
+    line-height: 2.2;
+    margin: 0;
 
 }
 
+.value {
+    font-size: 20px;
+    background: #4c1569;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    text-shadow: 2px 2px 4px black, 0 0 50px #f7d795, 0 0 20px #ecac40;
+    text-align: center;
+}
 
-
-.card {
-    width: 16%;
-    height: 32%;
-    display: inline-block;
-    position: relative;
-    margin: .20em;
+.jumbotron_mobile h1, .jumbotron_mobile h2 {
+    text-shadow: 2px 2px 4px black, 0 0 50px #f7d795, 0 0 20px #ecac40;
+    font-size: 10vw;
+    text-align: center;
 
 }
+
+.jumbotron_mobile h2 {
+    font-size: 3vw;
+}
+
+.jumbotron_mobile > div {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.label {
+    background: #4c1569;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    text-shadow: 2px 2px 4px black, 0 0 50px #f7d795, 0 0 20px #ecac40;
+    line-height: 4em;
+}
+
+.reset {
+    background: #4c1569;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    text-shadow: 2px 2px 4px black, 0 0 50px #f7d795, 0 0 20px #ecac40;
+    line-height: 4em;
+}
+
+#game-area {
+    height: 20vh;
+
+}
+
+.cardRow {
+    height: 60%;
+    margin: 1em 0;
+}
+
 .back {
     position: absolute;
-    opacity: .2;
+   /* opacity: .4;*/
+    border: 2px solid #fab728;
+    border-radius: 27px 27px 27px 27px;
+
+
 }
+
 .front {
     position: absolute;
+    border: 2px solid #fab728;
+    border-radius: 27px 27px 27px 27px;
 }
+
 img {
     width: 100%;
     height: 100%;
+    border-radius: 27px 27px 27px 27px;
+}
+
+#videoModal {
+    top: 35%;
+    outline: none;
+}
+
+.modal-body {
+    height: 55%;
+    background-color: #4c1569;
+    -webkit-box-shadow: 10px 85px 156px 17px rgba(247,215,247,1);
+    -moz-box-shadow: 10px 85px 156px 17px rgba(247,215,247,1);
+    box-shadow: 10px 85px 156px 17px rgba(247,215,247,1);
+
+}
+.close {
+    color: #fab728;
+    opacity: 1;
+    text-shadow: none;
+}
+
+
+
+
+iframe {
+    height: 90%;
+    width: 100%;
+}
+
+#main_dunk {
+    position: absolute;
+    height: 55%;
+    bottom: 40%;
+    left: 25%;
+
 }

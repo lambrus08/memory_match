@@ -4,48 +4,85 @@
     <title>Memory Match</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="main.js"></script>
 </head>
 <body>
-<div class="jumbotron">
-    <h1>Dunking with legends</h1>
+<div id="mobile_title" class="jumbotron_mobile show-xs hidden-lg">
+    <div>
+        <h1>Dunking with legends</h1>
+
+        <h2>Click to continue</h2>
+    </div>
 </div>
-<div class="row">
-    <div class="col-md-3">
-        <div id="game-stats">
-            <div class="stats"><h3>Are you a legend?</h3></div>
-            <div class="row">
-                <video class="col-xs-8 col-xs-offset-2">
-                    <source src="assets/kobe%20dunk.mp4" type="video/mp4">
-                </video>
+
+    <div class="col-md-12 col-md-offset-4 hidden-sm"><h1 id="medium_header">Dunking with Legends</h1></div>
+
+<div class="container-fluid">
+
+    <div class="row video-holder">
+        <!--<div class="col-md-2 hidden-sm"><h1 id="medium_header">Dunking with Legends</h1></div>-->
+        <div class="col-md-2 hidden-sm">
+            <div class="header_panel">
+                <h3><a class="label label-default" href="#">Settings</a></h3>
+                <h3><a class="label label-default" href="about.html">About</a></h3>
             </div>
-            <div class="row stats-holder">
-                <div class="games-played col-xs-3">
-                    <h4><span class="label label-default">Games Played</span></h4>
+        </div>
+        <div class="col-md-8 arena-holder">
+            <img src="assets/images/jumbotron_4.jpg" id="arena" class="img-responsive">
+            <video id="main_dunk">
+                <source src="assets/images/kobe.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="col-md-2">
+            <div class="games-played col-md-12 col-xs-3">
+                <h4><span class="label label-default">Games Played</span></h4>
 
-                    <div class="value"></div>
-                </div>
-                <div class="attempts col-xs-3">
-                    <h4><span class="label label-default">Attempts</span></h4>
+                <span class="value">0</span>
+            </div>
+            <div class="attempts col-md-12 col-xs-3">
+                <h4><span class="label label-default">Attempts</span></h4>
 
-                    <div class="value"></div>
-                </div>
-                <div class="accuracy col-xs-3">
-                    <h4><span class="label label-default">Accuracy</span></h4>
-                    <div class="value"></div>
-                </div>
-                <div content="col-xs-3">
-                    <button class="btn reset">Reset Game</button>
-                </div>
+                <span class="value">0</span>
+            </div>
+            <div class="accuracy col-md-12 col-xs-3">
+                <h4><span class="label label-default">Accuracy</span></h4>
+
+                <span class="value">0</span>
+            </div>
+            <div class="col-xs-3 hidden-lg">
+                <button class="btn reset">Reset Game</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 hidden-sm">
+                <button class="btn reset">Reset Game</button>
             </div>
         </div>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-12 col-xs-12">
         <div id="game-area">
 
-
         </div>
+
+        <div id="videoModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+
+                    <div class="modal-body">
+                        <iframe id="ytplayer" frameborder="0" allowfullscreen=""></iframe>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="modal_close">
+                            Continue
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
     </div>
 </div>
