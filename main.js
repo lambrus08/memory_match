@@ -1,6 +1,8 @@
 // array that puts all src images dynamically
 var video_starttime_array = [4, 8, 10, 14, 18, 22.1, 23.8, 25];
 var video_starttime_index = 0;
+var video_timer = null, dunk_timer = null;
+var call_loser = false;
 var srcArray = [
     'assets/images/shaq.jpg',
     'assets/images/kobe.jpg',
@@ -13,72 +15,86 @@ var srcArray = [
     'assets/images/magic.jpg'
 ];
 var players = {
-    'assets/images/shaq.jpg':
-    {
-        match_result: function() {
+    'assets/images/slava.jpg': {
+        match_result: function () {
+            $('#videoModal').modal('show');
+            play_youtube_video('cCEYk6qD5m0');
+            call_loser = true;
+            $('button.close').click(function () {
+                close_video();
+            });
+            $('.loser').click(function(){
+                $('#loserModal').modal('hide');
+                $('.reset').click();
+
+            })
+        }
+    },
+
+    'assets/images/shaq.jpg': {
+        match_result: function () {
             $('#videoModal').modal('show');
             play_youtube_video('KgGaBQEN1X0');
+            $('button.close').click(function () {
+                $('#ytplayer').attr('src', '');
+
+
+            })
         }
     },
-    'assets/images/kobe.jpg':
-    {
-        match_result: function() {
+    'assets/images/kobe.jpg': {
+        match_result: function () {
             $('#videoModal').modal('show');
             play_youtube_video('xYiHvMuYJ44');
+            $('button.close').click(function () {
+                $('#ytplayer').attr('src', '');
+            })
         }
     },
 
-    'assets/images/pau.jpg':
-    {
-        match_result: function() {
+    'assets/images/pau.jpg': {
+        match_result: function () {
             $('#videoModal').modal('show');
             play_youtube_video('rHUQDi0E6eM');
+            $('button.close').click(function () {
+                $('#ytplayer').attr('src', '');
+            })
         }
     },
-    'assets/images/Jamesworthy.jpg':
-    {
-        match_result: function() {
+    'assets/images/Jamesworthy.jpg': {
+        match_result: function () {
             $('#videoModal').modal('show');
             play_youtube_video('GNREeNzvJcI');
+
         }
     },
 
-    'assets/images/jerrywest.jpg':
-    {
-        match_result: function() {
+    'assets/images/jerrywest.jpg': {
+        match_result: function () {
             $('#videoModal').modal('show');
             play_youtube_video('fzWGnA4Ll-0');
+
         }
     },
 
-    'assets/images/kareem.jpg':
-    {
-        match_result: function() {
+    'assets/images/kareem.jpg': {
+        match_result: function () {
             $('#videoModal').modal('show');
             play_youtube_video('dQkUVSXKwgg');
-        }
-    },
-
-    'assets/images/slava.jpg':
-    {
-        match_result: function() {
-            $('#videoModal').modal('show');
-            play_youtube_video('vEZ7T4Ym5Sc');
 
         }
     },
 
-    'assets/images/wilt.jpg':
-    {
-        match_result: function() {
+
+    'assets/images/wilt.jpg': {
+        match_result: function () {
             $('#videoModal').modal('show');
             play_youtube_video('Qak1eeHqfJ8');
         }
     },
 
-    'assets/images/magic.jpg':
-    {
-        match_result: function() {
+    'assets/images/magic.jpg': {
+        match_result: function () {
             $('#videoModal').modal('show');
             play_youtube_video('mYuhQNQovHY');
         }
@@ -88,15 +104,6 @@ var players = {
 };
 
 
-
-   /* pau: 'assets/images/pau.jpg',
-    james: 'assets/images/Jamesworthy.jpg',
-    jerry: 'assets/images/jerrywest.jpg',
-    kareem: 'assets/images/kareem.jpg',
-    slava: 'assets/images/slava.jpg',
-    wilt: 'assets/images/wilt.jpg',
-    magic: 'assets/images/magic.jpg'
-};*!/*/
 var firstCardClicked = null;
 var secondCardClicked = null;
 var matchCounter = 0;
@@ -105,24 +112,40 @@ var attempts = 0;
 var accuracy = 0;
 var gamesPlayed = 0;
 
-//make a function that increments to the next video_startime_index,
-//and then uses that index to change the currentTime on the video player
+function close_video(){
+    $('#ytplayer').attr('src', '');
+    if(call_loser){
+
+        $('#loserModal').modal();
+    }
+}
+
 function mainDunk() {
+    dunk_timer = setTimeout(rotate, 1000);
     var video = document.getElementById("main_dunk");
+    $(video).show();
     var time = video_starttime_array[video_starttime_index++];
-    video.currentTime=time;
-
-}
-function play_youtube_video(vid_id){
-    var string = "http://www.youtube.com/embed/"+vid_id+"?autoplay=1";
-    $("#ytplayer").attr('src',string);
+    video.currentTime = time;
 }
 
+function rotate(){
+    $('#arena-holder').toggleClass('active-area-holder');
+
+}
+
+function play_youtube_video(vid_id) {
+    var string = "http://www.youtube.com/embed/" + vid_id + "?autoplay=1";
+    $("#ytplayer").attr('src', string);
+
+}
+function resetCards(){
+    $('#game-area').empty();
+}
 
 function addCardsToDom() {
     var dupArr = srcArray.concat(srcArray);
     for (var i = 0; dupArr.length > 0; i++) {
-        if(i % 6 == 0){
+        if (i % 6 == 0) {
 
             var row = $("<div>").addClass('row cardRow');
 
@@ -133,10 +156,12 @@ function addCardsToDom() {
         console.log(dupArr);
         var frontCard = $('<div>').addClass('front');
         var img = $('<img>', {
+            addClass:'players',
             src: ranChoice
         });
         var backCard = $('<div>').addClass('back');
         var backImg = $('<img>', {
+            addClass:'players',
             src: 'assets/images/cardlogo.jpg'
         });
 
@@ -148,7 +173,7 @@ function addCardsToDom() {
         backCard.append(backImg);
         cardContainer.append(frontCard, backCard);
         row.append(cardContainer);
-        if(i % 6 === 0){
+        if (i % 6 === 0) {
             $('#game-area').append(row);
         }
 
@@ -174,7 +199,6 @@ function cardClicked(backCardClicked) {
 
         console.log('this is 2nd card clicked: ', secondCardClicked);
         if (secondCardClicked == firstCardClicked) {
-
             players[srcId].match_result();
             matchCounter++;
             firstCardClicked = null;
@@ -208,7 +232,7 @@ function cardClicked(backCardClicked) {
 }
 
 
-function addClickHandler(){
+function addClickHandler() {
     $('.back').on("click", function () {
         console.log("this is clicked: ", $(this));
         var backCardClicked = $(this);
@@ -217,8 +241,8 @@ function addClickHandler(){
 }
 
 
-function displayStats(){
-    accuracy = Math.round(100* (matchCounter / attempts));
+function displayStats() {
+    accuracy = Math.round(100 * (matchCounter / attempts));
     $('.games-played .value').text(gamesPlayed);
     $('.attempts .value').text(attempts);
     if (attempts == 0) {
@@ -230,33 +254,41 @@ function displayStats(){
 
 }
 function resetStats() {
-    var parent = $('#game-area');
-    var divs = parent.children();
-    while (divs.length) {
-        parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
-    }
 
     displayStats();
     accuracy = 0;
     totalPossibleMatches = 0;
     attempts = 0;
     matchCounter = 0;
+    gamesPlayed++;
+
+
+
 
 
 }
+function clearVideoTimer(){
+    clearTimeout(video_timer);
+    clearTimeout(dunk_timer);
+}
 function assignResetButton() {
-    $('.btn').on('click', function(){
+    $('.reset').on('click', function () {
+        call_loser = false;
+        clearVideoTimer();
         $('.back').show();
         firstCardClicked = null;
         secondCardClicked = null;
-        video_starttime_index = 0;
-        mainDunk();
         resetStats();
         displayStats();
+
+        $("#main_dunk").hide()[0].currentTime=0;
+        video_starttime_index = 0;
+        resetCards();
+        addCardsToDom();
+        addClickHandler();
     });
 
 }
-
 
 
 $(document).ready(function () {
@@ -264,10 +296,15 @@ $(document).ready(function () {
     //recognize the back class
     addClickHandler();
     assignResetButton();
-    $("#mobile_title").click(function(){
+    $("#mobile_title").click(function () {
         $(this).hide();
     });
-    $("#modal_close").click(function(){
-        mainDunk();
+    $("#videoModal").click(function () {
+        rotate();
+        video_timer = setTimeout(mainDunk, 3000);
     });
+    $('button.close').click(function () {
+        close_video();
+    })
+
 });

@@ -12,17 +12,17 @@
 <body>
 <div id="mobile_title" class="jumbotron_mobile show-xs hidden-lg">
     <div>
-        <h1>Dunking with legends</h1>
+        <h1>Dunking with Legends</h1>
 
         <h2>Click to continue</h2>
     </div>
 </div>
 
-    <div class="col-md-12 col-md-offset-4 hidden-sm"><h1 id="medium_header">Dunking with Legends</h1></div>
+    <div class="col-md-12 text-center hidden-sm"><h1 id="medium_header">Dunking with Legends</h1></div>
 
 <div class="container-fluid">
 
-    <div class="row video-holder">
+    <div class="row top-holder">
         <!--<div class="col-md-2 hidden-sm"><h1 id="medium_header">Dunking with Legends</h1></div>-->
         <div class="col-md-2 hidden-sm">
             <div class="header_panel">
@@ -30,12 +30,12 @@
                 <h3><a class="label label-default" href="about.html">About</a></h3>
             </div>
         </div>
-        <div class="col-md-8 arena-holder">
-            <img src="assets/images/jumbotron_4.jpg" id="arena" class="img-responsive">
-            <video id="main_dunk">
-                <source src="assets/images/kobe.mp4" type="video/mp4">
-            </video>
-        </div>
+
+            <div class="col-md-8" id="arena-holder">
+                <video id="main_dunk" class="col-xs-7 center-block" >
+                    <source src="assets/images/kobe.mp4" type="video/mp4">
+                </video>
+             </div>
         <div class="col-md-2">
             <div class="games-played col-md-12 col-xs-3">
                 <h4><span class="label label-default">Games Played</span></h4>
@@ -62,7 +62,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-12 col-xs-12">
+    <div class="col-md-8 col-md-offset-2 col-xs-12">
         <div id="game-area">
 
         </div>
@@ -82,6 +82,25 @@
                 </div>
             </div>
         </div>
+        <div id="loserModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+
+                    <div class="modal-body">
+                       <h3>HAHAHAHA!!! You picked a Laker scrub and got dunked
+                           on! Game resets!</h3>
+                        <img src="http://4.bp.blogspot.com/_2K7VEZcGJA4/Sjr1LEc3i0I/AAAAAAAAAJY/PNcM9au52tM/s400/13023988-M-1.jpg" width="500px">
+                        <button type="button" class="loser" data-dismiss="modal" aria-hidden="true">
+                            Continue
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
 
     </div>

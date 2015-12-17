@@ -17,18 +17,32 @@ body {
 
 }
 
-#arena {
-    height: 35%;
-}
 
-.arena-holder img {
-    border-radius: 103px 103px 103px 103px;
-    -moz-border-radius: 103px 103px 103px 103px;
-    -webkit-border-radius: 103px 103px 103px 103px;
+
+
+#arena-holder {
+    border-radius: 130px 130px 130px 130px;
+    -moz-border-radius: 130px 130px 130px 130px;
+    -webkit-border-radius: 130px 130px 130px 130px;
     border: 16px double #FDB927;
+    background-image: url("assets/images/jumbotron_4.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-origin: border-box;
+    height: 40%;
+
 }
 
-.video-holder {
+
+.active-area-holder {
+    transform: rotateX(360deg);
+    transform-style: preserve-3d;
+    transition: 3s;
+}
+
+
+
+.top-holder {
     text-align: center;
 }
 
@@ -43,7 +57,6 @@ body {
 }
 
 .value {
-    font-size: 20px;
     background: #4c1569;
     font-family: 'Press Start 2P', cursive;
     color: white;
@@ -82,11 +95,12 @@ body {
     font-family: 'Press Start 2P', cursive;
     color: white;
     text-shadow: 2px 2px 4px black, 0 0 50px #f7d795, 0 0 20px #ecac40;
-    line-height: 4em;
+    line-height: 2.5em;
+
 }
 
 #game-area {
-    height: 20vh;
+    height: 25vh;
 
 }
 
@@ -97,7 +111,7 @@ body {
 
 .back {
     position: absolute;
-   /* opacity: .4;*/
+    /*opacity: .4;*/
     border: 2px solid #fab728;
     border-radius: 27px 27px 27px 27px;
 
@@ -110,7 +124,7 @@ body {
     border-radius: 27px 27px 27px 27px;
 }
 
-img {
+.players {
     width: 100%;
     height: 100%;
     border-radius: 27px 27px 27px 27px;
@@ -129,6 +143,11 @@ img {
     box-shadow: 10px 85px 156px 17px rgba(247,215,247,1);
 
 }
+
+.modal-body h3 {
+    color: #fab728;
+}
+
 .close {
     color: #fab728;
     opacity: 1;
@@ -144,9 +163,11 @@ iframe {
 }
 
 #main_dunk {
-    position: absolute;
+    top: 5%;
     height: 55%;
-    bottom: 40%;
-    left: 25%;
-
+    float: none;
 }
+
+
+
+
