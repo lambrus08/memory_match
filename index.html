@@ -9,7 +9,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="main.js"></script>
 </head>
-<body>
+<body id="body-container">
 <div id="mobile_title" class="jumbotron_mobile show-xs hidden-lg">
     <div>
         <h1>Dunking with Legends</h1>
@@ -73,7 +73,7 @@
                 <div class="modal-content">
 
 
-                    <div class="modal-body">
+                    <div class="modal-body" id="winners-modal">
                         <iframe id="ytplayer" frameborder="0" allowfullscreen=""></iframe>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="modal_close">
                             Continue
@@ -85,17 +85,36 @@
         <div id="loserModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
              aria-hidden="true">
             <div class="modal-dialog">
+                <div class="modal-content theme-modal">
+
+
+                    <div>
+                       <h3>HAHAHAHA!!! You picked a Laker scrub and got dunked
+                           on! Game resets!</h3>
+                        <img src="http://4.bp.blogspot.com/_2K7VEZcGJA4/Sjr1LEc3i0I/AAAAAAAAAJY/PNcM9au52tM/s400/13023988-M-1.jpg" width="450px">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="close " data-dismiss="modal" aria-hidden="true">
+                            Continue
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="ending-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
                 <div class="modal-content">
 
 
-                    <div class="modal-body">
-                       <h3>HAHAHAHA!!! You picked a Laker scrub and got dunked
-                           on! Game resets!</h3>
-                        <img src="http://4.bp.blogspot.com/_2K7VEZcGJA4/Sjr1LEc3i0I/AAAAAAAAAJY/PNcM9au52tM/s400/13023988-M-1.jpg" width="500px">
-                        <button type="button" class="loser" data-dismiss="modal" aria-hidden="true">
+                    <div class="modal-body" id="ending-modal-body">
+                        <h3>Congrats!!! You are now dunking with legends!!!</h3>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                             Continue
                         </button>
-
                     </div>
                 </div>
             </div>

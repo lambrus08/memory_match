@@ -1,4 +1,4 @@
-body {
+#body-container {
     background-color: #4c1569;
 
 }
@@ -111,7 +111,7 @@ body {
 
 .back {
     position: absolute;
-    /*opacity: .4;*/
+    opacity: .4;
     border: 2px solid #fab728;
     border-radius: 27px 27px 27px 27px;
 
@@ -135,7 +135,7 @@ body {
     outline: none;
 }
 
-.modal-body {
+#winners-modal {
     height: 55%;
     background-color: #4c1569;
     -webkit-box-shadow: 10px 85px 156px 17px rgba(247,215,247,1);
@@ -144,14 +144,20 @@ body {
 
 }
 
-.modal-body h3 {
+.theme-modal  {
     color: #fab728;
+    background-color: #4c1569;
 }
 
+#ending-modal {
+    background-image: url("assets/images/ending_lakers.jpg");
+    color: #fab728;
+    background-color: #4c1569;
+
+}
 .close {
     color: #fab728;
     opacity: 1;
-    text-shadow: none;
 }
 
 
@@ -168,6 +174,23 @@ iframe {
     float: none;
 }
 
+#about-body{
+   background-color: #4c1569;
+}
 
+.game-summary{
+    color: white;
+    text-shadow: 2px 2px 4px black, 0 0 50px #f7d795, 0 0 20px #ecac40;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 60px;
 
+}
 
+.summary-holder{
+    background: #4c1569;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    text-shadow: 2px 2px 4px black, 0 0 50px #f7d795, 0 0 20px #ecac40;
+    line-height: 2.5em;
+
+}

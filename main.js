@@ -22,10 +22,23 @@ var players = {
             call_loser = true;
             $('button.close').click(function () {
                 close_video();
+                call_loser = false;
+                clearVideoTimer();
+                $('.back').show();
+                firstCardClicked = null;
+                secondCardClicked = null;
+                resetStats();
+                displayStats();
+
+                $("#main_dunk").hide()[0].currentTime=0;
+                video_starttime_index = 0;
+                resetCards();
+                addCardsToDom();
+                addClickHandler();
             });
             $('.loser').click(function(){
                 $('#loserModal').modal('hide');
-                $('.reset').click();
+
 
             })
         }
@@ -35,20 +48,12 @@ var players = {
         match_result: function () {
             $('#videoModal').modal('show');
             play_youtube_video('KgGaBQEN1X0');
-            $('button.close').click(function () {
-                $('#ytplayer').attr('src', '');
-
-
-            })
         }
     },
     'assets/images/kobe.jpg': {
         match_result: function () {
             $('#videoModal').modal('show');
             play_youtube_video('xYiHvMuYJ44');
-            $('button.close').click(function () {
-                $('#ytplayer').attr('src', '');
-            })
         }
     },
 
@@ -56,9 +61,6 @@ var players = {
         match_result: function () {
             $('#videoModal').modal('show');
             play_youtube_video('rHUQDi0E6eM');
-            $('button.close').click(function () {
-                $('#ytplayer').attr('src', '');
-            })
         }
     },
     'assets/images/Jamesworthy.jpg': {
@@ -207,7 +209,7 @@ function cardClicked(backCardClicked) {
             console.log('2nd card clicked status in function: ', secondCardClicked);
             $('.back').removeClass('currentCard');
             if (matchCounter === totalPossibleMatches) {
-
+                console.log('test');
             }
             else {
                 console.log('functionality reset');
@@ -257,7 +259,7 @@ function resetStats() {
 
     displayStats();
     accuracy = 0;
-    totalPossibleMatches = 0;
+    totalPossibleMatches = 8;
     attempts = 0;
     matchCounter = 0;
     gamesPlayed++;
@@ -290,7 +292,6 @@ function assignResetButton() {
 
 }
 
-
 $(document).ready(function () {
     addCardsToDom();//this function must called here in order to load dynamic board and have the click function
     //recognize the back class
@@ -305,6 +306,12 @@ $(document).ready(function () {
     });
     $('button.close').click(function () {
         close_video();
+        if (matchCounter === totalPossibleMatches) {
+            setTimeout(function(){
+                $('#ending-modal').modal('show');
+            },6500);
+            matchCounter = 0;
+        }
     })
 
 });
