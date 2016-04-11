@@ -111,7 +111,6 @@
 
 .back {
     position: absolute;
-    opacity: .4;
     border: 2px solid #fab728;
     border-radius: 27px 27px 27px 27px;
 
@@ -178,7 +177,7 @@ iframe {
    background-color: #4c1569;
 }
 
-.game-summary{
+.text-style{
     color: white;
     text-shadow: 2px 2px 4px black, 0 0 50px #f7d795, 0 0 20px #ecac40;
     font-family: 'Brush Script MT', cursive;
@@ -187,10 +186,28 @@ iframe {
 }
 
 .summary-holder{
-    background: #4c1569;
     font-family: 'Press Start 2P', cursive;
-    color: white;
+    color: #f7d795;
     text-shadow: 2px 2px 4px black, 0 0 50px #f7d795, 0 0 20px #ecac40;
     line-height: 2.5em;
+
+}
+
+a:link {
+    text-decoration: none;
+    color: #f7d795;
+    text-shadow: 2px 2px 4px black, 0 0 50px #f7d795, 0 0 20px #ecac40;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #4c1569;
+}
+
+
+a:hover {
+    text-decoration: none;
+    color: #f7d795;
+    text-shadow: 2px 2px 4px black, 0 0 50px #f7d795, 0 0 20px #ecac40;
 
 }
