@@ -1,4 +1,4 @@
-#body-container {
+body {
     background-color: #4c1569;
 
 }
@@ -60,7 +60,6 @@
     background: #4c1569;
     font-family: 'Press Start 2P', cursive;
     color: white;
-    text-shadow: 2px 2px 4px black, 0 0 50px #f7d795, 0 0 20px #ecac40;
     text-align: center;
 }
 
@@ -86,7 +85,6 @@
     background: #4c1569;
     font-family: 'Press Start 2P', cursive;
     color: white;
-    text-shadow: 2px 2px 4px black, 0 0 50px #f7d795, 0 0 20px #ecac40;
     line-height: 4em;
 }
 
@@ -178,17 +176,16 @@ iframe {
 }
 
 .text-style{
-    color: white;
-    text-shadow: 2px 2px 4px black, 0 0 50px #f7d795, 0 0 20px #ecac40;
-    font-family: 'Brush Script MT', cursive;
-    font-size: 60px;
+        color: white;
+        text-shadow: 2px 2px 4px black, 0 0 50px #f7d795, 0 0 20px #ecac40;
+        font-family: 'Brush Script MT', cursive;
+        font-size: 60px;
 
-}
+    }
 
 .summary-holder{
     font-family: 'Press Start 2P', cursive;
     color: #f7d795;
-    text-shadow: 2px 2px 4px black, 0 0 50px #f7d795, 0 0 20px #ecac40;
     line-height: 2.5em;
 
 }
@@ -196,18 +193,18 @@ iframe {
 a:link {
     text-decoration: none;
     color: #f7d795;
-    text-shadow: 2px 2px 4px black, 0 0 50px #f7d795, 0 0 20px #ecac40;
+
 }
 
 a:visited {
     text-decoration: none;
-    color: #4c1569;
+    color: white;
 }
+
 
 
 a:hover {
     text-decoration: none;
     color: #f7d795;
-    text-shadow: 2px 2px 4px black, 0 0 50px #f7d795, 0 0 20px #ecac40;
 
 }
